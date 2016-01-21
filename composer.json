@@ -1,0 +1,27 @@
+{
+    "name": "guiassemany/sc-generator",
+    "description": "Scriptcase best practices generator",
+    "type": "2",
+    "require": {
+        "symfony/console": "^3.0",
+        "symfony/filesystem": "^3.0",
+        "symfony/finder": "^3.0",
+        "symfony/dependency-injection": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.6.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guilherme Assemany",
+            "email": "guilhermeassemany@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+      "psr-4":{
+        "guiassemany\\scGenerator\\": "src"
+      }
+    }
+}
