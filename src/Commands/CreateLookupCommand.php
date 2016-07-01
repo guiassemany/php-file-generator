@@ -53,6 +53,11 @@ class CreateLookupCommand extends Command
             ->setName('sc:lookup')
             ->setDescription('Generates a Lookup')
             ->addArgument(
+                'fileName',
+                InputArgument::REQUIRED,
+                'The file name'
+            )
+            ->addArgument(
                 'table',
                 InputArgument::REQUIRED,
                 'Which table you want to query?'
@@ -62,6 +67,7 @@ class CreateLookupCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->table = $input->getArgument('table');
+        $this->fileName = $input->getArgument('fileName');
 
         $this->finder->files()->name('lookup.stub')->in(__DIR__."/../stubs/");
 
@@ -69,7 +75,7 @@ class CreateLookupCommand extends Command
             //var_dump($file->getRealpath());
             $contents = $file->getContents();
             $this->replaceTableName($contents, 'binga');
-            $this->files->dumpFile('lookup.php', $contents);
+            $this->files->dumpFile($this->fileName.'.php', $contents);
         }
     }
 

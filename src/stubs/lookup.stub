@@ -3,5 +3,5 @@
 $sql = "SELECT * FROM {{table}}";
 sc_lookup(rs, $sql);
 if(!isset($rs[0][0])){
-  $teste = "ahhaha";
+  $teste = "{{table}}";
 }
